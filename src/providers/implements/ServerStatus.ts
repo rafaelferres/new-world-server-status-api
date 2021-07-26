@@ -14,7 +14,8 @@ export class ServerStatus implements IServerStatus {
 
     async startBrowser(): Promise<void> {
         this.browser = await puppeteer.launch({
-            headless: true
+            headless: true,
+            args: ['--no-sandbox']
         })
     }
 
