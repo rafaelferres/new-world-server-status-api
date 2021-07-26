@@ -16,5 +16,8 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "indent": "off",
+        "no-useless-constructor": "off",
+        "space-before-function-paren": "off"
     }
 }

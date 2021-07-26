@@ -1,6 +1,4 @@
-import {} from '@entities/remove'
-import {} from '@providers/remove'
-import {} from '@repositories/remove'
-import {} from '@useCases/remove'
+import { Services } from './services'
 
-console.log('a')
+const services = new Services()
+services.start()
