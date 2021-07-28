@@ -3,6 +3,7 @@ import express, { Express, Router } from 'express'
 import dotenv from 'dotenv'
 import cron from 'node-cron'
 import { Logger } from 'tslog'
+import cors from 'cors'
 
 export class Services {
     private servers: any = {}
@@ -16,6 +17,7 @@ export class Services {
         dotenv.config()
         this.serverStatus = new ServerStatus()
         this.app = express()
+        this.app.use(cors())
         this.app.use(express.json())
         this.app.get('/', (req, res) => res.json({ status: 'running' }))
         this.app.use('/api/v1', this.routersOne())
